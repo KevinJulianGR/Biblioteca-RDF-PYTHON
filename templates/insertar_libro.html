@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Insertar Libro</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f2f2f2;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        form {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h2 {
+            color: #0077b6;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="text"], select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #0077b6;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #005f99;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 20px 0;
+            font-size: 16px;
+            color: #fff;
+            background-color: #0077b6;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            cursor: pointer;
+            text-align: center;
+        }
+        .button:hover {
+            background-color: #005f99;
+        }
+    </style>
+</head>
+<body>
+    <form action="/insertar_libro" method="post">
+        <h2>Insertar Nuevo Libro</h2>
+        <label for="titulo">Título:</label>
+        <input type="text" id="titulo" name="titulo" required>
+        <label for="autor">Autor:</label>
+        <input type="text" id="autor" name="autor" required>
+        <label for="categoria">Categoría:</label>
+        <select id="categoria" name="categoria" required>
+            <option value="">Seleccione una categoría</option>
+            <option value="Ficción">Ficción</option>
+            <option value="No ficción">No ficción</option>
+            <option value="Ciencia ficción">Ciencia ficción</option>
+            <!-- Agrega más opciones según tus categorías -->
+        </select>
+        <label for="tipo">Tipo:</label>
+        <select id="tipo" name="tipo" required>
+            <option value="">Seleccione un tipo</option>
+            <option value="Libro físico">Libro físico</option>
+            <option value="eBook">eBook</option>
+            <!-- Agrega más opciones según tus tipos de libro -->
+        </select>
+        <label for="editorial">Editorial:</label>
+        <input type="text" id="editorial" name="editorial" required>
+        <input type="submit" value="Insertar Libro">
+    </form>
+    <a href="/home" class="button">Volver a Inicio</a>
+</body>
+</html>

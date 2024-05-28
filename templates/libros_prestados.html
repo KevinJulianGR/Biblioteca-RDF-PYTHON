@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ontología de Biblioteca</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f2f2f2;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #0077b6;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+        header img {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 60px;
+        }
+        main {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h2 {
+            color: #0077b6;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ccc;
+        }
+        th {
+            background-color: #0077b6;
+            color: #fff;
+        }
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tbody tr:hover {
+            background-color: #f1f1f1;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 20px 0;
+            font-size: 16px;
+            color: #fff;
+            background-color: #0077b6;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            cursor: pointer;
+            text-align: center;
+        }
+        .button:hover {
+            background-color: #005f99;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #0077b6;
+            color: #fff;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="C:\Users\kevin\Desktop\Gestion\Imagenes\Libro.jpg" alt="Biblioteca">
+        <h1>Ontología de Biblioteca</h1>
+    </header>
+    <main>
+        <h2>Libros Prestados</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Nombre del Cliente</th>
+                    <th>Tipo</th>
+                    <th>Fecha de Préstamo</th>
+                    <th>Fecha de Devolución</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for prestamo in libros_prestados %}
+                <tr>
+                    <td>{{ prestamo.titulo }}</td>
+                    <td>{{ prestamo.clienteNombre }}</td>
+                    <td>{{ prestamo.tipo }}</td>
+                    <td>{{ prestamo.fechaPrestamo }}</td>
+                    <td>{{ prestamo.fechaDevolucion }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="/home" class="button">Volver a Inicio</a>
+    </main>
+    <footer>
+        &copy; Gestión del conocimiento - 2024.
+    </footer>
+</body>
+</html>
